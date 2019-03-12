@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -14,14 +15,12 @@ class Header extends React.Component {
   }
 
   handleChangeTab(tabName) {
-
-    if(tabName !== this.state.activeTab){
+    if (tabName !== this.state.activeTab) {
       this.setState({
         activeTab: tabName
       });
-      this.props.history.push('/' + tabName);  
+      this.props.history.push('/' + tabName);
     }
-
   }
 
   render() {
@@ -61,6 +60,11 @@ class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  header: PropTypes.string.isRequired,
+  history: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => {
   console.log('[Main#mapStateToProps]');
