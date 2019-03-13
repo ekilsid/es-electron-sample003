@@ -62,7 +62,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  header: PropTypes.string.isRequired,
+  header: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired
 };
 
